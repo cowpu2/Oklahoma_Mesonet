@@ -19,9 +19,6 @@ nocite: '@*'
 
 + Uses year range and current time as timestamp in file name to prevent overwriting previous data.  
 
-+ Writes a dat file for each year - this is a normal csv but excel will choke on opening it, which prevents excel from jacking up the date/time fields.  Can still be imported into excel as a text file - or just change the extension to csv  
-
-
 + When attempting to download several years of data there is a high likelihood of receiving an HTTP 500 error - this error comes from the server - there is no fixing it.  The script will throw an error while downloading a single day's data but will recover and continue.  Make a note of which years had issues, change "annis" to reflect those years and rerun script.  Depending on how many years are involved this may take several iterations. 
 There may be files written to disk with partial data that represent those years.  Error message looks like this:  *cannot open URL 'http://www.mesonet.org/index.php/dataMdfMts/dataController/getFile/20110526burn/mts/TEXT/': HTTP status was '500 Internal Server Error'Error in file(file, "rt") : cannot open the connection*  The data from 20110526 didn't get retrieved.  Rerunning the script for 2011 is the solution - even then it might not work the first go around.
 
